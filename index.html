@@ -38,23 +38,31 @@
     }
   </style>
 </head>
-<body>
+<div id="cd-widget"></div>
+  <script>
+    (function()  {
+      if (window.chatWidgetScriptLoaded) return;
+        window.chatWidgetConfig = {
+          agentId: "11e98e593e628f5edaecbabc4d" ,
+        };
+
+      var chatWidgetScript = document.createElement("script");
+      chatWidgetScript.type = 'text/javascript' ;
+      chatWidgetScript.src = "https://storage.googleapis.com/cdwidget/dist/assets/js/main.js" ;
+      document.body.appendChild(chatWidgetScript);
+
+      window.chatWidgetScriptLoaded = true;
+    }}();
+  </script>
+  
+  
+  
+  
+  
+  <body>
 
   <h1>Witaj na mojej stronie</h1>
   <p>
     Kliknij przycisk w prawym dolnym rogu, aby porozmawiać z chatbotem.
   </p>
 
-  <!-- PRZYCISK CHATU -->
-  <button 
-    class="chat-button"
-    onclick="window.open(
-      'https://dashboard.retellai.com/agents/agent_11e98e593e628f5edaecbabc4d',
-      '_blank'
-    )"
-  >
-    💬 Chat
-  </button>
-
-</body>
-</html>
