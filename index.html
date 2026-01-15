@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja strona</title>
-    
-    <script
-        id="retell-widget"
-        src="https://dashboard.retellai.com/retell-widget.js"
-        data-public-key="public_key_203f17a7837e0b33a4816"
-        data-agent-id="agent_11e98e593e628f5edaecbabc4d"
-    ></script>
-<script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=6RuOJmOFRj9r"></script>
+  <meta charset="UTF-8">
+  <title>Moja strona z chatbotem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    /* Kontener czatu */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 360px;
+      height: 520px;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0,0,0,0.35);
+      z-index: 9999;
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .chat-widget {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Witaj na mojej stronie!</h1>
-    <p>Kliknij ikonę czatu w prawym dolnym rogu.</p>
+
+  <h1>Witaj na mojej stronie</h1>
+  <p>
+    Jeśli masz pytania – skorzystaj z czatu w prawym dolnym rogu.
+  </p>
+
+  <!-- CHATBOT RETELLAI -->
+  <div class="chat-widget">
+    <iframe
+      src="https://dashboard.retellai.com/agents/agent_11e98e593e628f5edaecbabc4d"
+      width="100%"
+      height="100%"
+      style="border:none;"
+      allow="microphone; autoplay"
+    ></iframe>
+  </div>
+
 </body>
 </html>
