@@ -1,68 +1,29 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Moja strona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px;
-      background: #f4f4f4;
-    }
-
-    h1 {
-      margin-top: 0;
-    }
-
-    /* Przycisk czatu */
-    .chat-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0b5cff;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 16px 22px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      z-index: 9999;
-    }
-
-    .chat-button:hover {
-      background: #0847c4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Chat z AI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<div id="cd-widget"></div>
-  <script>
-    (function()  {
-      if (window.chatWidgetScriptLoaded) return;
-        window.chatWidgetConfig = {
-          agentId: "11e98e593e628f5edaecbabc4d" ,
-        };
+<body>
 
-      var chatWidgetScript = document.createElement("script");
-      chatWidgetScript.type = 'text/javascript' ;
-      chatWidgetScript.src = "https://storage.googleapis.com/cdwidget/dist/assets/js/main.js" ;
-      document.body.appendChild(chatWidgetScript);
+<div id="chat-container">
+    <div id="chat-header">
+        💬 Chat z AI
+    </div>
 
-      window.chatWidgetScriptLoaded = true;
-    }}();
-  </script>
-  
-  
-  
-  
-  
-  <body>
+    <div id="chat-messages"></div>
 
-  <h1>Witaj na mojej stronie</h1>
-  <p>
-    Kliknij przycisk w prawym dolnym rogu, aby porozmawiać z chatbotem.
-  </p>
+    <div id="chat-input">
+        <input
+            type="text"
+            id="user-input"
+            placeholder="Napisz wiadomość..."
+        />
+        <button id="send-btn">Wyślij</button>
+    </div>
+</div>
 
+<script src="script.js"></script>
+</body>
+</html>
